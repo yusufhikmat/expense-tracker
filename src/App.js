@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState}  from 'react'
 import './App.css'
 import Expenses from './components/expenses/Expenses';
 
@@ -23,11 +23,16 @@ const App = () => {
           amount: 450,
           date: new Date(2021, 5, 12),
         }]
+      const [lists, setLists] = useState(expenses)
+        const handleDelete=(id)=>{
+           const deleteItem =  lists.filter((item)=>item.id !== id)
+           setLists(deleteItem)
+        }
       
   return (
     <div className='app'>
-       <Expenses expenses={expenses}
-        
+       <Expenses expenses={lists}
+        deleteItem={handleDelete}
        />
     </div>
   )

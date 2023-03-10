@@ -1,7 +1,7 @@
 import React from 'react'
 import ExpenseItem from '../expenseItem/ExpenseItem'
 import './Expenses.css'
-const Expenses = ({expenses}) => {
+const Expenses = ({expenses, deleteItem}) => {
   return (
     <div className='expenses'>
         {expenses.map((item)=>{
@@ -11,6 +11,8 @@ const Expenses = ({expenses}) => {
                 date={item.date}
                 title={item.title}
                 amount={item.amount}
+                deleteItem={deleteItem}
+                id={item.id}
             /> 
             )
         })}

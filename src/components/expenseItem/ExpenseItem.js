@@ -3,7 +3,7 @@ import './ExpenseItem.css'
 import { FaRegTrashAlt } from "react-icons/fa";
 import ExpenseDate from '../expenseDate/ExpenseDate'
 
-const ExpenseItem = ({title, amount,date}) => {
+const ExpenseItem = ({title, amount,date, deleteItem,id}) => {
   return (
     <div className='expense-item'>
           <ExpenseDate date={date}/>
@@ -13,7 +13,9 @@ const ExpenseItem = ({title, amount,date}) => {
         </div>
         <div className='expense-item__price'>${amount}</div>
         
-          <FaRegTrashAlt className='btn-delete'/>
+          <FaRegTrashAlt 
+          onClick={()=>deleteItem(id)}
+          className='btn-delete'/>
     </div>
   )
 }
