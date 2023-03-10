@@ -36,6 +36,16 @@
     padding: 0.5rem;
     border-radius: 12px;
   }
+  .btn-delete{
+    color:#fff;
+    font-size: 30px;
+    margin-left: 10px;
+    cursor: pointer;    
+}
+
+.btn-delete:hover{ 
+    color:red;
+}
   
   @media (min-width: 580px) {
     .expense-item__description {
@@ -53,13 +63,5 @@
       font-size: 1.25rem;
       padding: 0.5rem 1.5rem;
     }
-    .btn-delete{
-        color:#fff;
-        font-size: 30px;
-        padding-left: 10px;
-        cursor: pointer;
-    }
-    .btn-delete:hover{ 
-        color:red;
-    }
+    
   }

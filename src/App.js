@@ -1,4 +1,4 @@
-import React  from 'react'
+import React from 'react'
 import './App.css'
 import Expenses from './components/expenses/Expenses';
 
@@ -22,12 +22,13 @@ const App = () => {
           title: 'New Desk (Wooden)',
           amount: 450,
           date: new Date(2021, 5, 12),
-        },
-      ];
+        }]
       
   return (
     <div className='app'>
-       <Expenses expenses={expenses}/>
+       <Expenses expenses={expenses}
+        
+       />
     </div>
   )
 }
