@@ -1,8 +1,10 @@
-import React,{useState}  from 'react'
+import React,{useState} from 'react'
 import './App.css'
-import Expenses from './components/expenses/Expenses';
+import ExpenseList from './components/expenseList/ExpenseList'
+import ExpenseForm from './components/newExpense/ExpenseForm';
 
 const App = () => {
+  
     const expenses = [
         {
           id: 'e1',
@@ -22,18 +24,23 @@ const App = () => {
           title: 'New Desk (Wooden)',
           amount: 450,
           date: new Date(2021, 5, 12),
-        }]
-      const [lists, setLists] = useState(expenses)
-        const handleDelete=(id)=>{
-           const deleteItem =  lists.filter((item)=>item.id !== id)
-           setLists(deleteItem)
+        }];
+
+        const [listItems, setListItems] = useState(expenses)
+
+        const handleDeleteItem = (id)=>{
+          const deleteItem = listItems.filter((item)=>item.id !== id)
+          setListItems(deleteItem)
         }
       
   return (
     <div className='app'>
-       <Expenses expenses={lists}
-        deleteItem={handleDelete}
-       />
+    <ExpenseForm />
+      <ExpenseList 
+        expenses={listItems}
+        handleDeleteItem={handleDeleteItem}
+        />
+      
     </div>
   )
 }
