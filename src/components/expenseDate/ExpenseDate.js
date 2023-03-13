@@ -3,9 +3,11 @@ import './ExpenseDate.css'
 
 
 const ExpenseDate = ({date}) => {
-    const year= date.getFullYear();
-    const month = date.toLocaleString("en-US", {month: "long"})
-    const day = date.toLocaleString("en-US", {day: "2-digit"})
+  const currentDate = new Date(date)
+  console.log(currentDate,currentDate.getFullYear())
+    const year = currentDate.getFullYear()
+    const month = currentDate.toLocaleString("en-US", {month:'long'})
+    const day = currentDate.toLocaleString("en-US",{day:"2-digit"})
   return (
     <div className='expense-date'>
         <div className='expense-date__year'>{year}</div>
